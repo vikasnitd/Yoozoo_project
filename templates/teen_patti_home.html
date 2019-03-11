@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} input {% endblock %}
+{% block content %}
+<h2> Teen Patti </h2>
+
+<form action="{{ url_for('patti_answer')}}" method="GET">
+  Please enter number of player:<br><br>
+  <input class="form-control" type="text" name="count">
+  <br><br>
+  <input class="btn btn-primary" type="submit" >
+</form>
+
+{% endblock %}

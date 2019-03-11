@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} input {% endblock %}
+{% block content %}
+
+<form action="{{ url_for('output')}}" method="GET">
+	<input type="hidden" name="matrix_size" value = "{{ mat_size }}" >
+<table>
+	{% for i in range(1, mat_size+2) %}
+    	<tr>
+            {% if i == 1 %}
+                {% for x in range(1, mat_size + 2) %}
+                    {%if x == 1 %}
+                        <td>
+                            <input class="form-control" type="text" name="" value = "Loc. of salesman/Desti." disabled="disabled" />
+                        </td>
+                    {%else%}
+                        <td>
+                            <input class="form-control" type="text" name="" value = "Location {{x-1}}" disabled="disabled" />
+                        </td>
+                    {%endif%}
+                {% endfor %}
+            {%else%}
+    		    {% for j in range(1, mat_size+2) %}
+                    {% if j == 1 %}
+                        <td>
+                            <input class="form-control" type="text" name="" value="Location of salesman {{i-1}}" disabled="disabled" />
+                        </td>
+                    {%else%}
+                        <td>
+                            <input class="form-control" type="text" name="company" required />
+                        </td>
+                    {%endif%}
+        	   {%endfor%}
+            {% endif %}
+    	</tr>
+    {% endfor%}  
+</table>
+    <br>
+  <input class="btn btn-primary" type="submit" >
+</form>
+{% endblock %}
+

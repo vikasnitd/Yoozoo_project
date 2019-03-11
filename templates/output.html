@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} input {% endblock %}
+{% block content %}
+
+<h2>Salesman Problem </h2>
+
+<form action="{{ url_for('answer')}}" method="GET">
+  Please Enter size of Cost Matrix:<br><br>
+  <input class="form-control" type="text" name="cost">
+  <br><br>
+  <input class="btn btn-primary" type="submit" >
+</form> 
+
+{% endblock %}
